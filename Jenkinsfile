@@ -12,7 +12,8 @@ pipeline {
         POLARIS_PROJECT    = 'WebGoat'
         POLARIS_BRANCH     = 'Polaris-testing'
 
-        // ✅ CORRECT build command for Java 17 + old Maven plugins
+        // ✅ CORRECT build command for Java 17 + old Maven plugins 
+        // Testing
         COVERITY_BUILD_COMMAND = 'mvn clean compile -DskipTests -DskipITs -Dmaven.test.skip=true -Dgpg.skip=true'
     }
 
