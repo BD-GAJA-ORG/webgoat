@@ -1,3 +1,7 @@
+Demo
+
+Working Jenkins file
+
 pipeline {
     agent any
 
@@ -13,7 +17,9 @@ pipeline {
         POLARIS_BRANCH     = 'Polaris-testing'
     }
 
-    
+    stages {
+
+        
 
         stage('Download Polaris Bridge CLI') {
             steps {
@@ -40,7 +46,7 @@ pipeline {
                     polaris.branch.name=${POLARIS_BRANCH} \
                     polaris.assessment.types=SAST,SCA \
                     polaris.waitForScan=true \
-                    polaris.reports.sarif.create=true"
+                    polaris.reports.sarif.create=true
                 """
             }
         }
