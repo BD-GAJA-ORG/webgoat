@@ -14,9 +14,6 @@ pipeline {
     }
 
     stages {
-
-        
-
         stage('Download Polaris Bridge CLI') {
             steps {
                 sh '''
@@ -41,7 +38,7 @@ pipeline {
                     polaris.project.name=${POLARIS_PROJECT} \
                     polaris.branch.name=${POLARIS_BRANCH} \
                     polaris.assessment.types=SAST,SCA \
-                    polaris.waitForScan=true \
+                    polaris.waitForScan=false \
                     polaris.reports.sarif.create=true
                 """
             }
