@@ -1,7 +1,3 @@
-Demo
-
-Working Jenkins file
-
 pipeline {
     agent any
 
