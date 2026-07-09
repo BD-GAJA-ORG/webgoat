@@ -11,19 +11,9 @@ pipeline {
         POLARIS_APP_NAME   = 'Gaja-Impl'
         POLARIS_PROJECT    = 'WebGoat'
         POLARIS_BRANCH     = 'Polaris-testing'
-
-        // ✅ CORRECT build command for Java 17 + old Maven plugins 
-        // Testing
-        COVERITY_BUILD_COMMAND = 'mvn clean compile -DskipTests -DskipITs -Dmaven.test.skip=true -Dgpg.skip=true'
     }
 
-    stages {
-
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
+    
 
         stage('Download Polaris Bridge CLI') {
             steps {
@@ -50,8 +40,7 @@ pipeline {
                     polaris.branch.name=${POLARIS_BRANCH} \
                     polaris.assessment.types=SAST,SCA \
                     polaris.waitForScan=true \
-                    polaris.reports.sarif.create=true \
-                    coverity.build.command="${COVERITY_BUILD_COMMAND}"
+                    polaris.reports.sarif.create=true"
                 """
             }
         }
