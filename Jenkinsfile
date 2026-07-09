@@ -37,7 +37,7 @@ pipeline {
                     polaris.application.name=${POLARIS_APP_NAME} \
                     polaris.project.name=${POLARIS_PROJECT} \
                     polaris.branch.name=${POLARIS_BRANCH} \
-                    polaris.assessment.types=SAST,SCA \
+                    polaris.assessment.types=SCA \
                     polaris.waitForScan=false \
                     polaris.reports.sarif.create=true
                 """
